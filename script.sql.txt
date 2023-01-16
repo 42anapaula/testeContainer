@@ -1,0 +1,27 @@
+create database testeContainer
+
+use testeContainer
+
+create table clientes(
+
+	id bigint not null auto_increment,
+    nome varchar(150) not null,
+    
+    primary key(id)
+
+)
+
+select * from clientes
+
+create table conteiners(
+	id_cliente bigint not null,
+    n_conteiner varchar(11) not null,
+    tipo varchar(2) not null,
+    status tinyint not null,
+    categoria varchar(30) not null,
+    
+    primary key(n_conteiner),
+    Foreign key (id_cliente) references clientes(id)
+)
+
+select * from conteiners
